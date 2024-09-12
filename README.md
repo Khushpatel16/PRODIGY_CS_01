@@ -59,7 +59,7 @@ def display_encrypted_message(encrypted_message):
 
 def main():
     try:
-        message = input("Enter your message to the recipient (max 18 words): ")
+        message = input("Enter your message (max 18 words): \n")
         if not all(char.isalpha() or char.isspace() for char in message):
             print("Kindly input words that do not contain numbers")
             return
@@ -73,12 +73,12 @@ def main():
         encrypted_message = encrypt_message(message, shift)
         display_encrypted_message(encrypted_message)
         
-        action = input("You have an unread message. Press 1 to read and 2 to discard: ")
+        action = input("To Decrypt type 1 and to exit type 2: \n")
         if action == '1':
             decrypted_message = decrypt_message(encrypted_message, shift)
             print(f"Decrypted Message: {decrypted_message}")
         elif action == '2':
-            print("You have no unread messages.")
+            print("Encrypted and Closed.")
         else:
             print("Invalid input.")
     
